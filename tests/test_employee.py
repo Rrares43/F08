@@ -3,7 +3,7 @@ import employee
 
 @pytest.fixture(autouse=True)
 def reset():
-    employee.Employee.empCount = 0
+    employee.Employee.empCount = 0 #asta am facut ca sa mi se reseteze countul la fiecare testare
 
 def test_display_employee():
     emp = employee.Manager("Andrei", "3500", "Vanzare")

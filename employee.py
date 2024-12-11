@@ -38,10 +38,10 @@ class Employee:
 
 
 class Manager(Employee):
-    mgrCount = 0
+    mgrCount = 0 #variabila statica pt count
     
     def __init__(self, name, salary, department = "F08"):
-        super().__init__(name, salary)
+        super().__init__(name, salary) #aici am folosit constructorul clasei mama
         self._department = f"F08_{department}"
         Manager.mgrCount += 1
         
@@ -60,7 +60,7 @@ class Manager(Employee):
 def main():
     Y = float(len("Rares Aurelian"))
     final_y = int(Y/3)
-    angajati_manageri = []
+    angajati_manageri = [] #lista goala in care pun toate obiectele de tip Manager pe care le fac
     angajat_normal = Employee("Lenghel", "2800")
     
     for i in range(final_y):
@@ -75,6 +75,7 @@ def main():
     
     angajat_normal.display_emp_count()
     angajati_manageri[0].display_emp_count()
+    print(f"There are: {Manager.mgrCount} managers")
 
    
 if __name__ == "__main__":
